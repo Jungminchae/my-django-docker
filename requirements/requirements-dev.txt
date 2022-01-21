@@ -1,0 +1,9 @@
+-r requirements-base.txt
+black
+django-extensions==3.1.5
+django-debug-toolbar==3.2.3
+pytest
+pytest-cov
+pytest-sugar
+pytest-django
+pytest-xdist
