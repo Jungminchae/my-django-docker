@@ -98,7 +98,7 @@ DATABASES = {
 #         "HOST": config("DB_HOST"),
 #         "PORT": config("DB_PORT"),
 #         'TEST': {
-#             'NAME': 'tablebooking_test'
+#             'NAME': 'test_db'
 #        }
 #     }
 # }
