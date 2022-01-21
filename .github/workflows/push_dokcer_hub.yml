@@ -1,0 +1,22 @@
+name: Push to Docker hub registry
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      
+      - name: Build and Push to Docker Hub
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: minchae3618/dj-docker-base
+          registry: docker.io
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          tags: ${{ secrets.DJANGO_VERSION }}, latest
